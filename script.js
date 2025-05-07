@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // DOM elementlerini seçme
   const heightInput = document.getElementById('height');
   const weightInput = document.getElementById('weight');
   const daysRadios = document.querySelectorAll('input[name="days"]');
@@ -19,17 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const pages = document.querySelectorAll('.page');
   const langButtons = document.querySelectorAll('.lang-btn');
 
-  // Dil seçenekleri
   const translations = {
     tr: {
-      // Ana sayfa
       'main-title': 'Fitness Program Oluşturucu',
       'main-description': 'Boy ve kilo bilgilerinizi girerek size özel fitness programınızı oluşturun.',
       'nav-home': 'Ana Sayfa',
       'nav-about': 'Hakkımda',
       'nav-contact': 'İletişim',
       
-      // BMI Hesaplama
       'bmi-title': 'Vücut Kitle İndeksi (BMI) Hesaplama',
       'bmi-description': 'Boy ve kilo bilgilerinizi girerek BMI değerinizi hesaplayın.',
       'height-label': 'Boy (cm)',
@@ -44,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'error-empty': 'Lütfen boy ve kilo değerlerinizi girin.',
       'error-invalid': 'Lütfen geçerli boy ve kilo değerleri girin.',
       
-      // Sonuçlar
       'result-title': 'BMI Sonucunuz',
       'bmi-categories-title': 'BMI Kategorileri',
       'bmi-underweight-range': '18.5\'in altı:',
@@ -55,12 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
       'bmi-overweight': 'Kilolu',
       'tips-title': 'Beslenme ve Egzersiz Önerileri',
       
-      // Program kategorileri
       'category-underweight': 'zayıf',
       'category-normal': 'normal',
       'category-overweight': 'kilolu',
       
-      // Program başlıkları
       'program-title-underweight': 'Kilo Alma ve Kas Geliştirme Programı',
       'program-desc-underweight': 'Bu program, sağlıklı kilo almanıza ve kas kütlenizi artırmanıza yardımcı olacak.',
       'program-title-normal': 'Kas Tonu ve Genel Fitness Programı',
@@ -69,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'program-desc-overweight': 'Bu program, sağlıklı kilo vermenize ve genel kondisyonunuzu artırmanıza yardımcı olacak.',
       'program-days-text': 'Haftalık Program ({days} gün)',
       
-      // Hakkımda
       'about-title': 'Hakkımda',
       'about-subtitle': 'Bilgisayar Mühendisliği Öğrencisi',
       'personal-info-title': 'Kişisel Bilgiler',
@@ -83,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'interest-3': 'Mobil Uygulama Geliştirme',
       'interest-4': 'Yapay Zeka ve Veri Bilimi',
       
-      // İletişim
       'contact-title': 'İletişim',
       'contact-intro': 'Benimle iletişime geçmek için aşağıdaki formu doldurabilir veya e-posta adresimi kullanabilirsiniz.',
       'contact-name-label': 'Adınız',
@@ -94,18 +85,15 @@ document.addEventListener('DOMContentLoaded', function() {
       'contact-email-info': 'E-posta:',
       'contact-social-info': 'Sosyal Medya:',
       
-      // Footer
       'copyright': '© 2025 Fitness Program Oluşturucu. Tüm hakları saklıdır.',
       'disclaimer': 'Bu uygulama sadece bilgilendirme amaçlıdır. Profesyonel sağlık tavsiyesi için lütfen bir uzmana danışın.',
       
-      // Program günleri
       'day-1': '1. Gün',
       'day-2': '2. Gün',
       'day-3': '3. Gün',
       'day-4': '4. Gün',
       'day-5': '5. Gün',
       
-      // Beslenme önerileri
       'underweight-tip-1': 'Günlük kalori ihtiyacınızdan 300-500 kalori fazla tüketin',
       'underweight-tip-2': 'Protein alımınızı artırın (vücut ağırlığınızın her kg\'ı için 1.6-2g)',
       'underweight-tip-3': 'Kompleks karbonhidratlar ve sağlıklı yağlar tüketin',
@@ -126,14 +114,12 @@ document.addEventListener('DOMContentLoaded', function() {
       'overweight-tip-6': 'Ağırlık antrenmanlarını ihmal etmeyin (kas kütlesi metabolizmanızı hızlandırır)'
     },
     en: {
-      // Home page
       'main-title': 'Fitness Program Generator',
       'main-description': 'Create your personalized fitness program by entering your height and weight information.',
       'nav-home': 'Home',
       'nav-about': 'About Me',
       'nav-contact': 'Contact',
       
-      // BMI Calculator
       'bmi-title': 'Body Mass Index (BMI) Calculator',
       'bmi-description': 'Calculate your BMI by entering your height and weight information.',
       'height-label': 'Height (cm)',
@@ -148,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'error-empty': 'Please enter your height and weight values.',
       'error-invalid': 'Please enter valid height and weight values.',
       
-      // Results
       'result-title': 'Your BMI Result',
       'bmi-categories-title': 'BMI Categories',
       'bmi-underweight-range': 'Below 18.5:',
@@ -159,12 +144,10 @@ document.addEventListener('DOMContentLoaded', function() {
       'bmi-overweight': 'Overweight',
       'tips-title': 'Nutrition and Exercise Recommendations',
       
-      // Program categories
       'category-underweight': 'underweight',
       'category-normal': 'normal',
       'category-overweight': 'overweight',
       
-      // Program titles
       'program-title-underweight': 'Weight Gain and Muscle Building Program',
       'program-desc-underweight': 'This program will help you gain healthy weight and increase your muscle mass.',
       'program-title-normal': 'Muscle Tone and General Fitness Program',
@@ -173,7 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'program-desc-overweight': 'This program will help you lose weight in a healthy way and improve your overall conditioning.',
       'program-days-text': 'Weekly Program ({days} days)',
       
-      // About Me
       'about-title': 'About Me',
       'about-subtitle': 'Computer Engineering Student',
       'personal-info-title': 'Personal Information',
@@ -187,7 +169,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'interest-3': 'Mobile App Development',
       'interest-4': 'Artificial Intelligence and Data Science',
       
-      // Contact
       'contact-title': 'Contact',
       'contact-intro': 'You can fill out the form below or use my email address to contact me.',
       'contact-name-label': 'Your Name',
@@ -198,18 +179,15 @@ document.addEventListener('DOMContentLoaded', function() {
       'contact-email-info': 'Email:',
       'contact-social-info': 'Social Media:',
       
-      // Footer
       'copyright': '© 2025 Fitness Program Generator. All rights reserved.',
       'disclaimer': 'This application is for informational purposes only. Please consult a professional for health advice.',
       
-      // Program days
       'day-1': 'Day 1',
       'day-2': 'Day 2',
       'day-3': 'Day 3',
       'day-4': 'Day 4',
       'day-5': 'Day 5',
       
-      // Nutrition tips
       'underweight-tip-1': 'Consume 300-500 calories more than your daily caloric needs',
       'underweight-tip-2': 'Increase your protein intake (1.6-2g per kg of your body weight)',
       'underweight-tip-3': 'Consume complex carbohydrates and healthy fats',
@@ -231,7 +209,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // Fitness programları veri yapısı
   const fitnessPrograms = {
     tr: {
       zayıf: {
@@ -869,14 +846,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  // Mevcut dil
   let currentLang = 'tr';
 
-  // Dil değiştirme fonksiyonu
   function changeLanguage(lang) {
     currentLang = lang;
     
-    // Dil butonlarını güncelle
     langButtons.forEach(btn => {
       if (btn.getAttribute('data-lang') === lang) {
         btn.classList.add('active');
@@ -885,22 +859,17 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Tüm metinleri güncelle
     updateAllTexts();
     
-    // HTML lang özelliğini güncelle
     document.documentElement.lang = lang;
   }
   
-  // Tüm metinleri güncelleme fonksiyonu
   function updateAllTexts() {
-    // Tüm id'si olan elementleri bul
     const elements = document.querySelectorAll('[id]');
     
     elements.forEach(element => {
       const id = element.id;
       
-      // Eğer bu id için çeviri varsa, metni güncelle
       if (translations[currentLang][id]) {
         if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
           element.placeholder = translations[currentLang][id];
@@ -911,7 +880,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // İletişim formu gönderme olayı
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -921,7 +889,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Dil butonlarına tıklama olayı
   langButtons.forEach(btn => {
     btn.addEventListener('click', function() {
       const lang = this.getAttribute('data-lang');
@@ -929,19 +896,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Sayfa geçişlerini yönetme
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       
-      // Aktif sayfa ve navigasyon linkini güncelleme
       const targetPageId = this.getAttribute('data-page');
       
-      // Aktif navigasyon linkini güncelleme
       navLinks.forEach(navLink => navLink.classList.remove('active'));
       this.classList.add('active');
       
-      // Aktif sayfayı güncelleme
       pages.forEach(page => {
         if (page.id === targetPageId) {
           page.classList.add('active');
@@ -950,19 +913,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
       
-      // Sayfanın en üstüne kaydır
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
-  // Hesaplama butonuna tıklama olayı
   calculateBtn.addEventListener('click', function() {
-    // Form değerlerini alma
     const height = heightInput.value;
     const weight = weightInput.value;
-    let daysPerWeek = "3"; // Varsayılan değer
+    let daysPerWeek = "3"; 
 
-    // Seçilen gün sayısını bulma
     for (const radio of daysRadios) {
       if (radio.checked) {
         daysPerWeek = radio.value;
@@ -970,27 +929,22 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    // Girdi kontrolü
     if (!height || !weight) {
       showError(translations[currentLang]['error-empty']);
       return;
     }
 
-    // String'den sayıya çevirme
     const heightInM = parseFloat(height) / 100;
     const weightInKg = parseFloat(weight);
 
-    // Geçerli sayılar mı kontrolü
     if (isNaN(heightInM) || isNaN(weightInKg) || heightInM <= 0 || weightInKg <= 0) {
       showError(translations[currentLang]['error-invalid']);
       return;
     }
 
-    // BMI hesaplama: kilo (kg) / boy² (m²)
     const bmiValue = weightInKg / (heightInM * heightInM);
     const bmiValueRounded = parseFloat(bmiValue.toFixed(1));
 
-    // BMI kategorisini belirleme
     let category;
     if (bmiValue < 18.5) {
       category = translations[currentLang]['category-underweight'];
@@ -1000,27 +954,21 @@ document.addEventListener('DOMContentLoaded', function() {
       category = translations[currentLang]['category-overweight'];
     }
 
-    // Sonuçları gösterme
     showResults(bmiValueRounded, category, daysPerWeek);
   });
 
-  // Hata mesajını gösterme
   function showError(message) {
     errorMessage.textContent = message;
     errorAlert.style.display = 'block';
     resultsSection.style.display = 'none';
   }
 
-  // Sonuçları gösterme
   function showResults(bmi, category, daysPerWeek) {
-    // Hata mesajını gizle
     errorAlert.style.display = 'none';
     
-    // BMI değerini ve kategorisini güncelle
     bmiValue.textContent = bmi;
     bmiCategory.textContent = category;
     
-    // BMI kategorisine göre renk ve ikon ayarla
     switch(category) {
       case translations[currentLang]['category-underweight']:
         bmiCategory.className = 'bmi-category text-blue';
@@ -1033,14 +981,12 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
     }
     
-    // Program bilgilerini güncelle
     const program = fitnessPrograms[currentLang][category];
     programTitle.textContent = program.title;
     programDescription.textContent = program.description;
     programIcon.innerHTML = program.iconSvg;
     programDays.textContent = translations[currentLang]['program-days-text'].replace('{days}', daysPerWeek);
     
-    // Program günlerini oluştur
     programSchedule.innerHTML = '';
     program.days[daysPerWeek].forEach(day => {
       const dayCard = document.createElement('div');
@@ -1064,7 +1010,6 @@ document.addEventListener('DOMContentLoaded', function() {
       programSchedule.appendChild(dayCard);
     });
     
-    // Beslenme önerilerini oluştur
     programTips.innerHTML = '';
     program.tips.forEach(tip => {
       const tipItem = document.createElement('li');
@@ -1072,13 +1017,10 @@ document.addEventListener('DOMContentLoaded', function() {
       programTips.appendChild(tipItem);
     });
     
-    // Sonuçları göster
     resultsSection.style.display = 'block';
     
-    // Sonuçlara kaydır
     resultsSection.scrollIntoView({ behavior: 'smooth' });
   }
   
-  // Sayfa yüklendiğinde varsayılan dili ayarla
   changeLanguage('tr');
 });

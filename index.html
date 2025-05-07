@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Program Oluşturucu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    
+    <div class="header">
+      <h1>Fitness Program Oluşturucu</h1>
+      <p>Boy ve kilo bilgilerinizi girerek size özel fitness programınızı oluşturun.</p>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" class="nav-link active" data-page="bmi-calculator">Ana Sayfa</a></li>
+          <li><a href="#" class="nav-link" data-page="about">Hakkımda</a></li>
+          <li><a href="#" class="nav-link" data-page="contact">İletişim</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    
+    <div class="pages">
+      
+      <div id="bmi-calculator" class="page active">
+        
+        <div class="card bmi-card">
+          <div class="card-header">
+            <div class="card-title">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.91 8.84 8.56 2.23a1.93 1.93 0 0 0-1.81 0L3.1 4.13a2.12 2.12 0 0 0-.05 3.69l12.22 6.93a2 2 0 0 0 1.94 0L21 12.51a2.12 2.12 0 0 0-.09-3.67Z"></path>
+                <path d="m3.09 8.84 12.35-6.61a1.93 1.93 0 0 1 1.81 0l3.65 1.9a2.12 2.12 0 0 1 .1 3.69L8.73 14.75a2 2 0 0 1-1.94 0L3 12.51a2.12 2.12 0 0 1 .09-3.67Z"></path>
+                <line x1="12" y1="22" x2="12" y2="13"></line>
+                <path d="M20 13.5v3.37a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13.5"></path>
+              </svg>
+              <h2>Vücut Kitle İndeksi (BMI) Hesaplama</h2>
+            </div>
+            <p class="card-description">Boy ve kilo bilgilerinizi girerek BMI değerinizi hesaplayın.</p>
+          </div>
+          <div class="card-content">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="height">Boy (cm)</label>
+                <input id="height" type="number" placeholder="Örn: 175" class="input">
+              </div>
+              <div class="form-group">
+                <label for="weight">Kilo (kg)</label>
+                <input id="weight" type="number" placeholder="Örn: 70" class="input">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Haftada kaç gün fitness yapabilirsiniz?</label>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input type="radio" id="days-2" name="days" value="2">
+                  <label for="days-2">2 gün</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="days-3" name="days" value="3" checked>
+                  <label for="days-3">3 gün</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="days-4" name="days" value="4">
+                  <label for="days-4">4 gün</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="days-5" name="days" value="5">
+                  <label for="days-5">5 gün</label>
+                </div>
+              </div>
+            </div>
+
+            <div id="error-alert" class="alert error-alert" style="display: none;">
+              <h4>Hata</h4>
+              <p id="error-message"></p>
+            </div>
+
+            <button id="calculate-btn" class="button">
+              <span>Hesapla ve Program Oluştur</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        
+        <div id="results" class="results" style="display: none;">
+          
+          <div class="card result-card">
+            <div class="card-header gradient">
+              <h2>BMI Sonucunuz</h2>
+            </div>
+            <div class="card-content">
+              <div class="bmi-result">
+                <div class="bmi-values">
+                  <span id="bmi-value" class="bmi-value">0</span>
+                  <span id="bmi-category" class="bmi-category">normal</span>
+                </div>
+              </div>
+              <div class="info-alert">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <h4>BMI Kategorileri</h4>
+                <ul>
+                  <li>18.5'in altı: <span class="text-blue">Zayıf</span></li>
+                  <li>18.5 - 24.9 arası: <span class="text-green">Normal</span></li>
+                  <li>25 ve üzeri: <span class="text-orange">Kilolu</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card program-card">
+            <div class="card-header gradient">
+              <h2 id="program-title">Fitness Programı</h2>
+              <p id="program-description" class="program-description"></p>
+            </div>
+            <div class="card-content">
+              <div class="program-header">
+                <div id="program-icon" class="program-icon"></div>
+                <h3 id="program-days">Haftalık Program (3 gün)</h3>
+              </div>
+
+              <div id="program-schedule" class="program-schedule">
+                
+              </div>
+
+              <div class="nutrition-tips">
+                <div class="tips-header">
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a9 9 0 0 1 9 9c0 4.95-8 11-9 11-1 0-9-6.05-9-11a9 9 0 0 1 9-9Z"></path>
+                  </svg>
+                  <h3>Beslenme ve Egzersiz Önerileri</h3>
+                </div>
+                <ul id="program-tips">
+                 
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hakkımda Sayfası -->
+      <div id="about" class="page">
+        <div class="card about-card">
+          <div class="card-header gradient">
+            <h2>Hakkımda</h2>
+          </div>
+          <div class="card-content">
+            <div class="about-content">
+              <div class="about-profile">
+                <div class="profile-image">
+                  <img src="image/kaaan.jpeg" alt="Kaan Arslan">
+                </div>
+                <h3>Kaan Arslan</h3>
+                <p>Bilgisayar Mühendisliği Öğrencisi</p>
+
+                <div class="social-links">
+                  <a href="https://github.com/LouAndNietzschee" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                  <a href="https://www.linkedin.com/in/kaan-arslan-108407287/" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </a>
+                  <a href="mailto:kaannarslan34@gmail.com" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <div class="about-details">
+                <div class="about-section">
+                  <div class="section-header">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <h4>Kişisel Bilgiler</h4>
+                  </div>
+                  <p>
+                    Merhaba! Ben Kaan Arslan, bilgisayar mühendisliği öğrencisiyim. Yazılım geliştirme ve web
+                    teknolojileri konusunda tutkulu biriyim. Özellikle frontend geliştirme ve kullanıcı deneyimi
+                    tasarımı alanlarında kendimi geliştiriyorum.
+                  </p>
+                </div>
+
+                <div class="about-section">
+                  <div class="section-header">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <h4>Proje Hakkında</h4>
+                  </div>
+                  <p>
+                    Bu fitness programı oluşturucu, web geliştirme becerilerimi ilerletmek ve aynı zamanda sağlıklı
+                    yaşam konusundaki ilgimi birleştirmek için tasarladığım bir projedir. Modern web
+                    teknolojilerini kullanarak, kullanıcıların kişisel fitness hedeflerine ulaşmalarına yardımcı olmayı
+                    amaçlıyorum.
+                  </p>
+                  <p>
+                    Proje, vücut kitle indeksi hesaplaması yaparak kullanıcılara özelleştirilmiş fitness programları
+                    sunuyor. Gelecekte, ilerleme takibi, beslenme önerileri ve daha fazla özelleştirme seçenekleri
+                    eklemeyi planlıyorum.
+                  </p>
+                </div>
+
+                <div class="about-section">
+                  <div class="section-header">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <h4>İlgi Alanlarım</h4>
+                  </div>
+                  <ul>
+                    <li>Web Geliştirme (HTML, CSS, JavaScript)</li>
+                    <li>Fitness ve Sağlıklı Yaşam</li>
+                    <li>Mobil Uygulama Geliştirme</li>
+                    <li>Yapay Zeka ve Veri Bilimi</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div id="contact" class="page">
+        <div class="card contact-card">
+          <div class="card-header gradient">
+            <h2>İletişim</h2>
+          </div>
+          <div class="card-content">
+            <p class="contact-intro">
+              Benimle iletişime geçmek için aşağıdaki formu doldurabilir veya e-posta adresimi kullanabilirsiniz.
+            </p>
+
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="contact-name">Adınız</label>
+                <input id="contact-name" type="text" placeholder="Adınız Soyadınız" class="input">
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-email">E-posta</label>
+                <input id="contact-email" type="email" placeholder="ornek@mail.com" class="input">
+              </div>
+              
+              <div class="form-group">
+                <label for="contact-message">Mesajınız</label>
+                <textarea id="contact-message" placeholder="Mesajınızı buraya yazın..." class="textarea"></textarea>
+              </div>
+              
+              <button type="submit" class="button">Gönder</button>
+            </form>
+
+            <div class="contact-info">
+              <h3>İletişim Bilgileri</h3>
+              <p>
+                E-posta: <a href="mailto:kaannarslan34@gmail.com" class="contact-link">kaannarslan34@gmail.com</a>
+              </p>
+              <p>
+                Sosyal Medya:
+                <a href="https://github.com/LouAndNietzschee" target="_blank" class="contact-link">GitHub</a>,
+                <a href="https://www.linkedin.com/in/kaan-arslan-108407287/" target="_blank" class="contact-link">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <footer class="footer">
+      <p>© 2025 Fitness Program Oluşturucu. Tüm hakları saklıdır.</p>
+      <p>Bu uygulama sadece bilgilendirme amaçlıdır. Profesyonel sağlık tavsiyesi için lütfen bir uzmana danışın.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

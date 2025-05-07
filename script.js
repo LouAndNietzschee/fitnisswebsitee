@@ -864,21 +864,34 @@ document.addEventListener('DOMContentLoaded', function() {
     document.documentElement.lang = lang;
   }
   
-  function updateAllTexts() {
-    const elements = document.querySelectorAll('[id]');
+  // İletişim bilgileri kısmını düzeltmek için, contact-email-info ve contact-social-info elementlerinin içeriğini güncelleyelim
+function updateAllTexts() {
+  const elements = document.querySelectorAll('[id]');
+  
+  elements.forEach(element => {
+    const id = element.id;
     
-    elements.forEach(element => {
-      const id = element.id;
-      
-      if (translations[currentLang][id]) {
-        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-          element.placeholder = translations[currentLang][id];
-        } else {
-          element.textContent = translations[currentLang][id];
-        }
+    if (translations[currentLang][id]) {
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+        element.placeholder = translations[currentLang][id];
+      } else {
+        element.textContent = translations[currentLang][id];
       }
-    });
+    }
+  });
+  
+  // İletişim bilgilerini manuel olarak güncelle
+  const contactEmailInfo = document.getElementById('contact-email-info');
+  const contactSocialInfo = document.getElementById('contact-social-info');
+  
+  if (contactEmailInfo) {
+    contactEmailInfo.innerHTML = translations[currentLang]['contact-email-info'] + ' <a href="mailto:kaannarslan34@gmail.com" class="contact-link">kaannarslan34@gmail.com</a>';
   }
+  
+  if (contactSocialInfo) {
+    contactSocialInfo.innerHTML = translations[currentLang]['contact-social-info'] + ' <a href="https://github.com/LouAndNietzschee" target="_blank" class="contact-link">GitHub</a>, <a href="https://www.linkedin.com/in/kaan-arslan-108407287/" target="_blank" class="contact-link">LinkedIn</a>';
+  }
+}
 
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {

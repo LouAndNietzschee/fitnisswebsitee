@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'about-title': 'Hakkımda',
       'about-subtitle': 'Bilgisayar Mühendisliği Öğrencisi',
       'personal-info-title': 'Kişisel Bilgiler',
-      'personal-info-text': 'Merhaba! Ben Kaan Arslan, bilgisayar mühendisliği öğrencisiyim. Yazılım geliştirme ve web teknolojileri konusunda projeler geliştirmekteyim. Özellikle Full-Stack geliştirme ve kullanıcı deneyimi tasarımı alanlarında kendimi geliştiriyorum.',
+      'personal-info-text': 'Merhaba! Ben Kaan Arslan, bilgisayar mühendisliği öğrencisiyim. Yazılım geliştirme ve web teknolojileri konusunda tutkulu biriyim. Özellikle full-stack geliştirme ve kullanıcı deneyimi tasarımı alanlarında kendimi geliştiriyorum.',
       'project-info-title': 'Proje Hakkında',
       'project-info-text-1': 'Bu fitness programı oluşturucu, web geliştirme becerilerimi ilerletmek ve aynı zamanda sağlıklı yaşam konusundaki ilgimi birleştirmek için tasarladığım bir projedir. Modern web teknolojilerini kullanarak, kullanıcıların kişisel fitness hedeflerine ulaşmalarına yardımcı olmayı amaçlıyorum.',
       'project-info-text-2': 'Proje, vücut kitle indeksi hesaplaması yaparak kullanıcılara özelleştirilmiş fitness programları sunuyor. Gelecekte, ilerleme takibi, beslenme önerileri ve daha fazla özelleştirme seçenekleri eklemeyi planlıyorum.',
@@ -920,7 +920,7 @@ document.addEventListener('DOMContentLoaded', function() {
   calculateBtn.addEventListener('click', function() {
     const height = heightInput.value;
     const weight = weightInput.value;
-    let daysPerWeek = "3"; 
+    let daysPerWeek = "3";
 
     for (const radio of daysRadios) {
       if (radio.checked) {

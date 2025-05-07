@@ -375,10 +375,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
  
   calculateBtn.addEventListener('click', function() {
-    // Form değerlerini alma
+   
     const height = heightInput.value;
     const weight = weightInput.value;
-    let daysPerWeek = "3"; // Varsayılan değer
+    let daysPerWeek = "3";
 
    
     for (const radio of daysRadios) {
@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showResults(bmiValueRounded, category, daysPerWeek);
   });
 
-  // Hata mesajını gösterme
+
   function showError(message) {
     errorMessage.textContent = message;
     errorAlert.style.display = 'block';
@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
  
   function showResults(bmi, category, daysPerWeek) {
-    // Hata mesajını gizle
+
     errorAlert.style.display = 'none';
     
    

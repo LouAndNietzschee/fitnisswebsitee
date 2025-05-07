@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'about-title': 'About Me',
       'about-subtitle': 'Computer Engineering Student',
       'personal-info-title': 'Personal Information',
-      'personal-info-text': 'Hello! I\'m Kaan Arslan, a computer engineering student. I\'m passionate about software development and web technologies. I\'m particularly focused on developing my skills in frontend development and user experience design.',
+      'personal-info-text': 'Hello! I\'m Kaan Arslan, a computer engineering student. I\'m passionate about software development and web technologies. I\'m particularly focused on developing my skills in full-stack development and user experience design.',
       'project-info-title': 'About the Project',
       'project-info-text-1': 'This fitness program generator is a project I designed to advance my web development skills while combining my interest in healthy living. Using modern web technologies, I aim to help users reach their personal fitness goals.',
       'project-info-text-2': 'The project provides customized fitness programs by calculating body mass index. In the future, I plan to add progress tracking, nutrition recommendations, and more customization options.',

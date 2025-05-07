@@ -1,3 +1,4 @@
+/* Genel Stiller */
 :root {
   --primary: #14b8a6;
   --primary-dark: #0d9488;
@@ -48,10 +49,39 @@ body {
   padding: 1rem;
 }
 
-
+/* Header ve Navigasyon */
 .header {
   text-align: center;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.language-selector {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.lang-btn {
+  background-color: var(--gray-200);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-btn:hover {
+  background-color: var(--gray-300);
+}
+
+.lang-btn.active {
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 .header h1 {
@@ -97,7 +127,7 @@ body {
   color: var(--white);
 }
 
-
+/* Sayfalar */
 .page {
   display: none;
 }
@@ -106,7 +136,7 @@ body {
   display: block;
 }
 
-
+/* Card */
 .card {
   background-color: var(--white);
   border-radius: var(--border-radius);
@@ -154,7 +184,7 @@ body {
   padding: 1.5rem;
 }
 
-
+/* Form Elements */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -291,7 +321,7 @@ label {
   margin-top: 0.5rem;
 }
 
-
+/* Results */
 .results {
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -346,7 +376,7 @@ label {
   font-weight: 500;
 }
 
-
+/* Program */
 .program-header {
   display: flex;
   align-items: center;
@@ -439,7 +469,7 @@ label {
   margin-bottom: 0.5rem;
 }
 
-
+/* About Section */
 .about-content {
   display: flex;
   flex-direction: column;
@@ -555,7 +585,7 @@ label {
   margin-bottom: 0.25rem;
 }
 
-
+/* Contact Section */
 .contact-intro {
   margin-bottom: 1.5rem;
 }
@@ -587,7 +617,7 @@ label {
   text-decoration: underline;
 }
 
-
+/* Footer */
 .footer {
   text-align: center;
   margin-top: 3rem;
@@ -599,7 +629,7 @@ label {
   margin-bottom: 0.25rem;
 }
 
-
+/* Icons */
 .icon {
   width: 1.25rem;
   height: 1.25rem;
